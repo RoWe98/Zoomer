@@ -2,11 +2,13 @@
 
 ## What's Zoomer
 
-Zoomer is an opensource and cross-platform face recognition lib for python
-
+- Zoomer is an opensource and cross-platform face recognition lib for python
+- Zoomer is based on OpenCV and face_recognition
+- Zoomer can let the human face compare and human face detect easily and fast
 ## The requirement lib for Zoomer
 
-- opencv ```pip install opencv-python```
+- OpenCV ```pip install opencv-python```
+- face_recognition ```pip install face_recognition``` 
 
 ## How to download Zoomer
 
@@ -46,4 +48,5 @@ Just add the filename in you Python code
 
 ## Contact
 
-**E-Mail:wzx8551517@163.com**
+- E-Mail:wzx8551517@163.com
+- [Blog](www.luoshaoqi.cn)
