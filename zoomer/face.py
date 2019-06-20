@@ -1,6 +1,7 @@
 from .base import ZmBase
 import cv2
 import sys
+import os
 
 class ZmFace(ZmBase):
 
@@ -40,3 +41,9 @@ class ZmFace(ZmBase):
 
         cv2.imshow("Faces found", cv2.resize(image,(1024,768)))
         cv2.waitKey(0)
+
+        pt_flag = self.get_platform_judge()
+        if(pt_flag==1):
+            os.system("rm -rf haarcascade_frontalface_default.xml")
+        else:
+            os.system("del haarcascade_frontalface_default.xml")

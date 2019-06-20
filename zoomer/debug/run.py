@@ -1,4 +1,4 @@
-from face import ZmFace
+from zoomer.face import ZmFace
 import sys
 
 imagePath = sys.argv[1]
