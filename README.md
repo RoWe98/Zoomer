@@ -46,4 +46,4 @@ Just add the filename in you Python code
 
 ## Contact
 
-**E-main:wzx8551517@163.com**
+**E-Mail:wzx8551517@163.com**
