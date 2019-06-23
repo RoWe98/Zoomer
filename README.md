@@ -50,4 +50,4 @@ Just add the filename in you Python code
 ## Contact
 
 - E-Mail:wzx8551517@163.com
-- [Blog]https://(www.luoshaoqi.cn)
+- [Blog](https://www.luoshaoqi.cn)
