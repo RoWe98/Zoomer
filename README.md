@@ -31,6 +31,7 @@ face_num_client = ZmFace(imagePath)
 face_num_client.face_num()
 
 ```
+The current version of zoomer has only one function and it's class name is ZmFace,Also it has a method named face_num(),This method can get the face number of the picture you give to the program.
 
 ## How to run Zoomer
 
