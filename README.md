@@ -71,8 +71,9 @@ Without imshow
 ```
 
 **4.face_num returns**
+
 |returns|describe|
-|-|-|
+|-------|--------|
 |face_pixel|The pixel of the each poeple in the picture|
 |num_face|The number of the face in the picture|
 
