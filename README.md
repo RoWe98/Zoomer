@@ -33,7 +33,7 @@ face_num_client.face_num(option)
 
 ```
 | option | describe |
-- | - |
+- | - | -
 None|```option=[]``` Just output the OpenCV retangle image
 Hide|Don't output OpenCV imshow
 pixel|Output the pixel of the face
