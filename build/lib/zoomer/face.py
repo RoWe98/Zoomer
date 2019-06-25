@@ -40,15 +40,17 @@ class ZmFace(ZmBase):
         )
         print("Found {0} Faces! in the Picture".format(len(faces)))
 
-        # judge the items
-        for item in self.option:
+        # judge the items and judge options
+        if len(self.option) == 0:
+            self.flag.append('Null')
 
-            if item == '':
-                self.flag.append('Null')
-            elif item == 'Hide':
-                self.flag.append(item)
-            elif item == 'pixel':
-                self.flag.append(item)
+        else:
+            for item in self.option:
+
+                if item == 'Hide':
+                    self.flag.append(item)
+                elif item == 'pixel':
+                    self.flag.append(item)
 
         if 'Null' in self.flag:
             # Draw a rectangle around the faces
