@@ -9,6 +9,7 @@ class ZmFace(ZmBase):
         self.option = []
         self.flag = []
         self.pixel = {}
+        self.pixel_all={}
         return super().__init__(imagePath)
 
     def face_num(self, option):
@@ -18,7 +19,7 @@ class ZmFace(ZmBase):
         # imagePath = self.imagePath
         
         self.option = option
-
+        print("Your Option:"+str(self.option))
         self.getHaarcascadeFile()
 
         cascPath = "haarcascade_frontalface_default.xml"
@@ -37,7 +38,6 @@ class ZmFace(ZmBase):
             minNeighbors=5,
             minSize=(30, 30)
         )
-
         print("Found {0} Faces! in the Picture".format(len(faces)))
 
         # judge the items
@@ -58,19 +58,22 @@ class ZmFace(ZmBase):
             cv2.imshow("Faces found", cv2.resize(image,(1024,768)))
             cv2.waitKey(0)
             
-        elif 'pixel' in self.flag:
-            # OutPut the pixel of the Face 
-            for(x, y, w, h) in faces:
-                self.pixel[x] = x
-                self.pixel[y] = y
-                self.pixel[x+w] = x+w
-                self.pixel[x+h] = x+h
-            print()
-            print("face_pixel:")
-            print(self.pixel)
+        else:
+            if 'pixel' in self.flag and 'Hide'in self.flag:
+                # OutPut the pixel of the Face
+                for face_id in range(0,len(faces)):
+                    for(x, y, w, h) in faces:
+                        self.pixel['x'] = x
+                        self.pixel['y'] = y
+                        self.pixel['x+w'] = x+w
+                        self.pixel['x+h'] = x+h
+                        self.pixel_all[face_id+1]=self.pixel
+                    self.pixel = {}
+                print(self.pixel_all)
+                print("Without imshow")
+            elif 'Hide'in self.flag:
+                print("Without imshow")
 
-        elif 'Hide'in self.flag:
-            print("Without imshow")
 
         pt_flag = self.get_platform_judge()        
         if(pt_flag==1):

@@ -10,3 +10,4 @@ zoomer/__init__.py
 zoomer/__version__.py
 zoomer/base.py
 zoomer/face.py
+zoomer/run.py
