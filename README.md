@@ -32,11 +32,12 @@ option=[]  #Option List shown as followed
 face_num_client.face_num(option)
 
 ```
+
 | option | describe |
-- | - | -
-None|```option=[]``` Just output the OpenCV retangle image
-Hide|Don't output OpenCV imshow
-pixel|Output the pixel of the face
+| - | - | - |
+|None|```option=[]``` Just output the OpenCV retangle image|
+|Hide|Don't output OpenCV imshow|
+|pixel|Output the pixel of the face|
 
 **Option can input more than 2 at once like ```option=['Hide','Pixel']```**
 
