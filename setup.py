@@ -2,7 +2,7 @@
 from setuptools import setup
 
 setup(name='Zoomer',
-      version='0.0.13',
+      version='0.0.14',
       description='Zoomer is an open source face recognition lib',
       url='https://github.com/RoWe98/Zoomer',
       author='RoWe98',

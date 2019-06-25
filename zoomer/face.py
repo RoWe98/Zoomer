@@ -10,6 +10,7 @@ class ZmFace(ZmBase):
         self.flag = []
         self.pixel = {}
         self.pixel_all={}
+        self.pixel_list = []
         return super().__init__(imagePath)
 
     def face_num(self, option):
@@ -63,16 +64,17 @@ class ZmFace(ZmBase):
         else:
             if 'pixel' in self.flag and 'Hide'in self.flag:
                 # OutPut the pixel of the Face
-                for face_id in range(0,len(faces)):
-                    for(x, y, w, h) in faces:
-                        self.pixel['x'] = x
-                        self.pixel['y'] = y
-                        self.pixel['x+w'] = x+w
-                        self.pixel['x+h'] = x+h
-                        self.pixel_all[face_id+1]=self.pixel
-                    self.pixel = {}
-                print(self.pixel_all)
+                pixel_num = 0
+                for(x, y, w, h) in faces:
+                    self.pixel['x'] = x
+                    self.pixel['y'] = y
+                    self.pixel['x+w'] = x+w
+                    self.pixel['x+h'] = x+h
+                    self.pixel_all[pixel_num+1]=str(self.pixel)
+                    pixel_num = pixel_num + 1
+                #print(self.pixel_all)
                 print("Without imshow")
+                return self.pixel_all
             elif 'Hide'in self.flag:
                 print("Without imshow")
 
