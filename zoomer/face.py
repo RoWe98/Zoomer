@@ -6,14 +6,19 @@ import os
 class ZmFace(ZmBase):
 
     def __init__(self, imagePath):
+        self.option = []
+        self.flag = []
+        self.pixel = {}
         return super().__init__(imagePath)
 
-    def face_num(self):
+    def face_num(self, option):
     
         # Get user supplied values
         # imagePath = sys.argv[1]
         # imagePath = self.imagePath
         
+        self.option = option
+
         self.getHaarcascadeFile()
 
         cascPath = "haarcascade_frontalface_default.xml"
@@ -35,14 +40,41 @@ class ZmFace(ZmBase):
 
         print("Found {0} Faces! in the Picture".format(len(faces)))
 
-        # Draw a rectangle around the faces
-        for(x, y, w, h) in faces:
-            cv2.rectangle(image, (x,y), (x+w,y+w), (0, 255, 0), 2)
+        # judge the items
+        for item in self.option:
 
-        cv2.imshow("Faces found", cv2.resize(image,(1024,768)))
-        cv2.waitKey(0)
+            if item == '':
+                self.flag.append('Null')
+            elif item == 'Hide':
+                self.flag.append(item)
+            elif item == 'pixel':
+                self.flag.append(item)
 
-        pt_flag = self.get_platform_judge()
+        if 'Null' in self.flag:
+            # Draw a rectangle around the faces
+            for(x, y, w, h) in faces:
+                cv2.rectangle(image, (x,y), (x+w,y+w), (0, 255, 0), 2)
+
+            cv2.imshow("Faces found", cv2.resize(image,(1024,768)))
+            cv2.waitKey(0)
+            
+        else:
+            if 'pixel' in self.flag and 'Hide'in self.flag:
+                # OutPut the pixel of the Face 
+                for(x, y, w, h) in faces:
+                    self.pixel['x'] = x
+                    self.pixel['y'] = y
+                    self.pixel['x+w'] = x+w
+                    self.pixel['x+h'] = x+h
+                print()
+                print("face_pixel:")
+                print(self.pixel)
+                print("Without imshow")
+            elif 'Hide'in self.flag:
+                print("Without imshow")
+
+
+        pt_flag = self.get_platform_judge()        
         if(pt_flag==1):
             os.system("rm -rf haarcascade_frontalface_default.xml")
         else:
