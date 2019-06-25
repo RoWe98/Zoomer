@@ -30,6 +30,7 @@ Just add the filename in you Python code
 
 ### 1.ZmFace
 
+- **face_num**
 **The Face analysis lib including counting the number of the person in the picture**
 
 |Class_Method|Class_Method_describe|options|
@@ -69,6 +70,13 @@ Found 7 Faces! in the Picture
 Without imshow
 ```
 
+**4.face_num returns**
+|returns|describe|
+|-|-|
+|face_pixel|The pixel of the each poeple in the picture|
+|num_face|The number of the face in the picture|
+
+
 ## How to code with Zoomer
 
 **Use Zoomer like this**
@@ -76,11 +84,14 @@ Without imshow
 ```python
 # test.py
 from zoomer import ZmFace
+import sys
 imagePath = sys.argv[1]
-# imagePath = "Your file path"
 face_num_client = ZmFace(imagePath)
-option=[]  #Options have been listed in The main method for Zoomer
-face_num_client.face_num(option)
+option = ['Hide','pixel']
+option2 = ['Hide']
+face_pixel, faces_num = face_num_client.face_num(option)
+print(face_pixel)
+print("Found {0} Faces! in the Picture".format(faces_num))
 
 ```
 

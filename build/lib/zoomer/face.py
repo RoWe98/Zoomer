@@ -74,11 +74,13 @@ class ZmFace(ZmBase):
                     pixel_num = pixel_num + 1
                 #print(self.pixel_all)
                 print("Without imshow")
-                return self.pixel_all
+                self.clean()
+                return self.pixel_all, len(faces)
             elif 'Hide'in self.flag:
                 print("Without imshow")
 
 
+    def clean(self): 
         pt_flag = self.get_platform_judge()        
         if(pt_flag==1):
             os.system("rm -rf haarcascade_frontalface_default.xml")
