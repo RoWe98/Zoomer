@@ -1,5 +1,7 @@
 # Zoomer
 
+**author:RoWe98**
+
 ## What's Zoomer
 
 - Zoomer is an opensource and cross-platform face recognition lib for python
