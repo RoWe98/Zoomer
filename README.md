@@ -106,7 +106,7 @@ The current version of zoomer has only one function and it's class name is ```Zm
 
 ## Still Updating.....
 
-## Contact
+## Contact Me
 
 - E-Mail:wzx8551517@163.com
 - [Blog](https://www.luoshaoqi.cn)
