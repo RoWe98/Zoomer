@@ -3,7 +3,8 @@
 import cv2
 import sys
 from urllib import request
-import platform
+import face_recognition
+
 
 class ZmBase(object):
 
