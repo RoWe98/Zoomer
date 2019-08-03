@@ -80,6 +80,21 @@ Without imshow
 |num_face|The number of the face in the picture|
 
 
+### 2.ZmDetect
+
+**ZmDetect is a module can detect the face from the videocapture of your device**
+
+**How to use ZmDetect**
+```python
+from zoomer import ZmDetect
+ZmDetect.get_face()
+```
+
+That's very easy to use the ZmFace module
+
+just add this code in your program 
+
+
 ## How to code with Zoomer
 
 **Use Zoomer like this**

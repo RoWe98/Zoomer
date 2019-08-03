@@ -20,7 +20,7 @@ class ZmDetect:
 
         # 获取训练集
 
-        #ZmDetect.get_cascade()
+        ZmDetect.get_cascade()
         
         # 训练集位置
         cascPath = "haarcascade_frontalface_default.xml"

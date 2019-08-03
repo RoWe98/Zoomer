@@ -1,4 +1,4 @@
-from base import ZmBase
+from .base import ZmBase
 import cv2
 import sys
 import os
